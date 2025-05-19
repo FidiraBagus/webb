@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header><h1>Checkout</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+      <a href="login.html">Masuk</a>
+      <a href="register.html">Daftar</a>
+    </div>
+  </header>
+  <center>
+  <main>
+    <form action="invoice.html">
+      <p>Pilih Metode Pembayaran:</p>
+      <label><input type="radio" name="payment" value="DANA"> DANA</label>
+      <label><input type="radio" name="payment" value="OVO"> OVO</label>
+      <button type="submit">Bayar</button>
+    </form>
+  </main>
+  <a href="index.html">
+    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Kembali ke Halaman Beranda
+    </button><br><br><br></center>
+</a>
+<footer style="text-align: center; padding: 20px; background-color: #f80f70; color: white;">
+  <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+</footer>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    const selectedMethod = document.querySelector('input[name="payment"]:checked');
+    
+    if (!selectedMethod) {
+      event.preventDefault(); 
+      alert("Silakan pilih metode pembayaran terlebih dahulu.");
+    } else {
+      localStorage.setItem("metodePembayaran", selectedMethod.value);
+    }
+  });
+</script>
+
+</body>
+</html>

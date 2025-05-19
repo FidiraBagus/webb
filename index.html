@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Toko Skincare Murah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #000000;
+    }
+    header {
+      background-color: #f80f70;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .menu a {
+      margin: 0 10px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    main {
+      padding: 20px;
+    }
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .produk {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      background: white;
+      border-radius: 10px;
+    }
+    .produk img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .produk h4 {
+      margin: 10px 0 0 0;
+      color: #333;
+    }
+    button {
+      background-color: #5cb85c;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .invoice {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      max-width: 500px;
+      margin: auto;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    @media (max-width: 1200px) {
+      .produk-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 800px) {
+      .produk-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .produk-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      background-color: #f80f70;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Selamat Datang di Toko Skincare Murah</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+      <a href="login.html">Masuk</a>
+      <a href="register.html">Daftar</a>
+    </div>
+  </header>
+
+  <center><h2>Produk Skincare Kami</h2></center>
+
+  <div class="produk-container">
+    <div class="produk">
+      <a href="produk1.html"><img src="bromen1.jpg" alt="Serum Bromen Pria"></a>
+      <h4>Serum Bromen Pria</h4>
+      <h4>Rp 30.000</h4>
+    </div>
+    <div class="produk">
+      <a href="produk2.html"><img src="centella toner.jpg" alt="centella toner"></a>
+      <h4>centella toner</h4>
+      <h4>Rp 187.000</h4>
+    </div>
+    <div class="produk">
+      <a href="produk3.html"><img src="moise centella.jpg" alt="moisturaizer centella"></a>
+      <h4>moise centella</h4>
+      <h4>Rp 178.000</h4>
+    </div>
+    <div class="produk">
+      <a href="produk4.html"><img src="powerful cleansing.jpg" alt="powerfull cleansing"></a>
+      <h4>powerful cleansing</h4>
+      <h4>Rp 150.000</h4>
+    </div>
+    <div class="produk">
+      <a href="produk5.html"><img src="serum centella.jpg" alt="serum centella"></a>
+      <h4>serum centella</h4>
+      <h4>Rp 120.000</h4>
+    </div>
+    <div class="produk">
+      <a href="produk6.html"><img src="serum retinol MS Glow.jpg" alt="serum retinol MS Glow"></a>
+      <h4>serum retinol MS Glow</h4>
+      <h4>Rp 100.000</h4>
+    </div>
+  </div> 
+
+  <footer>
+    <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>

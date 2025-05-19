@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail Produk - Kalung 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function tambahKeKeranjang(nama, harga) {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      keranjang.push({ nama: nama, harga: harga });
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+      alert(nama + " telah ditambahkan ke keranjang!");
+    }
+  </script>
+  <style>
+    .produk-detail {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .produk-detail img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+
+    .produk-detail h2 {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    .produk-detail p {
+      font-size: 16px;
+      color: #555;
+      text-align: left;
+      margin: 15px 0;
+    }
+
+    .produk-detail ul {
+      text-align: left;
+      margin: 0 auto;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .produk-detail button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .produk-detail button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Detail Produk</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="index.html">Beranda</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="produk-detail">
+      <img src="serum centella.jpg" alt="serum centella">
+      <h2>serum centella</h2>
+      <p><strong>Harga:</strong> Rp 120.000</p>
+      <p><strong>Deskripsi:</strong> Madagascar Centella Ampoule dari SKIN1004 adalah serum terkonsentrasi yang ampuh yang langsung membantu menenangkan, mengurangi kemerahan dan peradangan pada kulit.</p>
+      <p><strong>Spesifikasi:</strong></p>
+      <ul>
+        <li>Berat Produk: 200g</li>
+        <li>Jenis Kulit: Berjerawat</li>
+        <li>Manfaat: Menghilangkan jerawat dan anti-penuaan dini>
+      </ul>
+      <button onclick="tambahKeKeranjang('serum centella', 120000)">Tambah ke Keranjang</button>
+    </div>
+  </main>
+
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="index.html">
+      <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Kembali ke Halaman Beranda
+      </button>
+    </a>
+  </div>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f80f70; color: white;">
+    <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>

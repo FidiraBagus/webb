@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keranjang</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Keranjang Belanja</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+      <a href="login.html">Masuk</a>
+      <a href="register.html">Daftar</a>
+    </div>
+  </header>
+<center>
+  <main>
+    <ul id="cartItems"></ul>
+    <a href="checkout.html">Lanjut ke Checkout</a>
+  </main>
+
+  <a href="index.html">
+    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Kembali ke Halaman Beranda
+    </button><br><br><br></center>
+  </a>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f80f70; color: white;">
+    <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      let cartItemsContainer = document.getElementById('cartItems');
+      
+      if (keranjang.length > 0) {
+        keranjang.forEach((item, index) => {
+          let produkElement = document.createElement('li');
+          produkElement.innerHTML = `${item.nama} - Rp ${item.harga} <button onclick="batalKeKeranjang(${index})">Batal</button>`;
+          cartItemsContainer.appendChild(produkElement);
+        });
+      } else {
+        cartItemsContainer.innerHTML = '<li>Keranjang Anda kosong.</li>';
+      }
+    };
+
+    function batalKeKeranjang(index) {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      keranjang.splice(index, 1);  
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+      window.location.reload();  
+    }
+  </script>
+</body>
+</html>

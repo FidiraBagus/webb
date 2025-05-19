@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #000000;
+}
+header {
+  background-color: #f80f70;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.menu a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+main {
+  padding: 20px;
+}
+.produk {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background: white;
+}
+.produk img {
+  width: 100%;
+  height: auto;
+}
+button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.invoice {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 500px;
+  margin: auto;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}

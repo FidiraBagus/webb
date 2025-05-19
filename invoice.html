@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struk</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Rincian Pemesanan</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+      <a href="login.html">Masuk</a>
+      <a href="register.html">Daftar</a>
+    </div>
+  </header>
+  <main>
+    <div class="invoice">
+      <h2>Toko Skincare Murah</h2>
+      <p>Jl. Raya Desa Ngerjo RT 05 RW 03, Malang, Jawa Timur</p>
+      <h3>Rincian Pesanan:</h3>
+      <ul id="invoiceItems"></ul>
+      <p><strong>Total:</strong> <span id="totalAmount"></span></p>
+      <p><strong>Metode Pembayaran:</strong> <span id="paymentMethod"></span></p>
+      <hr>
+      <p>Terima kasih telah berbelanja di Toko Skincare Murah!</p>
+    </div>
+  </main>
+  <center>
+  <a href="index.html">
+    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Kembali ke Halaman Beranda
+    </button><br><br><br></center>
+  </a>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f80f70; color: white;">
+    <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      let invoiceItemsContainer = document.getElementById('invoiceItems');
+      let totalAmountElement = document.getElementById('totalAmount');
+
+      let total = 0;
+
+      if (keranjang.length > 0) {
+        keranjang.forEach(item => {
+          let produkElement = document.createElement('li');
+          produkElement.innerHTML = `${item.nama} - Rp ${item.harga}`;
+          invoiceItemsContainer.appendChild(produkElement);
+
+          total += item.harga;
+        });
+      } else {
+        invoiceItemsContainer.innerHTML = '<li>Keranjang Anda kosong.</li>';
+      }
+
+      totalAmountElement.innerHTML = 'Rp ' + total;
+
+      let metode = localStorage.getItem('metodePembayaran') || 'Belum dipilih';
+      let paymentMethodElement = document.getElementById('paymentMethod');
+      paymentMethodElement.innerHTML = metode;
+  
+    };
+  </script>
+</body>
+</html>

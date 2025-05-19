@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail Produk - Kalung 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function tambahKeKeranjang(nama, harga) {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      keranjang.push({ nama: nama, harga: harga });
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+      alert(nama + " telah ditambahkan ke keranjang!");
+    }
+  </script>
+  <style>
+    .produk-detail {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .produk-detail img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+
+    .produk-detail h2 {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    .produk-detail p {
+      font-size: 16px;
+      color: #555;
+      text-align: left;
+      margin: 15px 0;
+    }
+
+    .produk-detail ul {
+      text-align: left;
+      margin: 0 auto;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .produk-detail button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .produk-detail button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Detail Produk</h1>
+    <div class="menu">
+      <a href="shop.html">Belanja</a>
+      <a href="cart.html">Keranjang</a>
+      <a href="index.html">Beranda</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="produk-detail">
+      <img src="serum retinol MS Glow.jpg" alt="serum retinol MS Glow">
+      <h2>serum retinol MS Glow</h2>
+      <p><strong>Harga:</strong> Rp 100.000</p>
+      <p><strong>Deskripsi:</strong> Serum Retinol MS Glow, khususnya Encapsulated Retinol Elixir, bermanfaat untuk merawat kulit anti-aging, mengatasi jerawat, serta memudarkan flek hitam. Serum ini juga dapat meningkatkan produksi kolagen, membuat kulit lebih halus dan bercahaya, serta membantu mencerahkan dan menyamarkan noda gelap. Selain itu, serum ini juga membantu mengontrol produksi minyak pada kulit berminyak.</p>
+      <p><strong>Spesifikasi:</strong></p>
+      <ul>
+        <li>Berat Produk: 20g</li>
+        <li>Komposisi: Antioksidan</li>
+        <li>Jenis Kulit: Semua Jenis Kulit</li>
+      </ul>
+      <button onclick="tambahKeKeranjang('serum retinol MS Glow', 100000)">Tambah ke Keranjang</button>
+    </div>
+  </main>
+
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="index.html">
+      <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Kembali ke Halaman Beranda
+      </button>
+    </a>
+  </div>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f80f70; color: white;">
+    <p>© 2025 Toko Skincare Murah. Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>
